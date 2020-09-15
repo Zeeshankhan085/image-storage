@@ -1,1 +1,5 @@
-!/dist
+/public
+/src
+/node_modules
+.browserslistrc
+.eslintrc.js

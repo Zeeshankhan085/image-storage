@@ -1,0 +1,17 @@
+<template>
+  <div>
+    Please wait...
+  </div>
+</template>
+
+<script>
+import { mapActions } from "vuex";
+export default {
+  methods: { ...mapActions(["finalizeLogin"]) },
+  created() {
+    this.finalizeLogin(window.location.hash);
+  },
+};
+</script>
+
+<style scoped></style>

@@ -1,5 +1,8 @@
+node_modules
+
 /public
 /src
-/node_modules
+
 .browserslistrc
 .eslintrc.js
+babel.config.js

@@ -11,7 +11,6 @@ export default {
   methods: {
     ...mapActions(["uploadImages"]),
     upload(event) {
-      console.log(event);
       this.uploadImages(event.target.files);
     }
   }

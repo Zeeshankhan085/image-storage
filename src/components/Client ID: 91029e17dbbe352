@@ -1,7 +1,0 @@
-Client ID: 91029e17dbbe352
-
-
-Clien-Secret: 7b8adb13fb86f1ee17418e0ea80d556086d5c92d
-
-
-https://api.imgur.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&response_type=REQUESTED_RESPONSE_TYPE&state=APPLICATION_STATE

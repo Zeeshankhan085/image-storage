@@ -14,6 +14,7 @@ const getters = {
 
 const actions = {
   logIn: () => {
+    console.log("hello");
     api.logIn();
   },
   logout: ({ commit }) => {

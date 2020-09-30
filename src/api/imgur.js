@@ -1,6 +1,6 @@
 import qs from "qs";
-// const CLIENT_ID = "5607b05840d77b0";
-const CLIENT_ID = "30978d12c639dd0";
+const CLIENT_ID = "5607b05840d77b0";
+// const CLIENT_ID = "30978d12c639dd0";
 
 const ROOT_URL = "https://api.imgur.com";
 import axios from "axios";

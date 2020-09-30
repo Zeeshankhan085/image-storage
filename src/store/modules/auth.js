@@ -27,7 +27,7 @@ const actions = {
 
     commit("setToken", query.access_token);
     window.localStorage.setItem("token", query.access_token);
-    router.push("/");
+    router.push("https://image-storage.netlify.app/");
   },
 };
 

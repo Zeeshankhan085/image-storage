@@ -1,19 +1,33 @@
 <template>
-  <div v-if="isLoggedIn" class="image-list">
-    <li v-for="(image, index) in allImages" :key="index">
-      <img :src="image.link" alt />
-    </li>
+  <div>
+    <div v-if="isLoggedIn" class="image-list">
+      <ImageItemApp
+        v-for="(image, index) in allImages"
+        :key="index"
+        :image="image"
+        :index="index"
+      ></ImageItemApp>
+    </div>
+    <h2 v-else>Log In to get started!</h2>
   </div>
-  <h2 v-else>Log In to get started!</h2>
 </template>
 
 <script>
+import ImageItemApp from "./ImageItemApp.vue";
 import { mapActions, mapGetters } from "vuex";
 export default {
+  components: {
+    ImageItemApp
+  },
   computed: { ...mapGetters(["allImages", "isLoggedIn"]) },
   methods: { ...mapActions(["fetchImages"]) },
   created() {
     this.fetchImages();
+  },
+  watch: {
+    allImages: function() {
+      this.fetchImages();
+    }
   }
 };
 </script>
@@ -26,17 +40,11 @@ li {
   border-radius: 4px;
 }
 
-img {
-  width: 100%;
-  height: 100%;
-  object-position: center;
-  object-fit: cover;
-}
-
 .image-list {
   margin-top: 2em;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, 250px);
+  grid-template-rows: repeat(8, 250px);
+  grid-gap: 15px;
 }
 </style>

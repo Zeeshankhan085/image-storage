@@ -1,7 +1,7 @@
 import api from "../../api/imgur";
 import { router } from "../../main";
 const state = {
-  images: [],
+  images: {},
 };
 
 const getters = {
@@ -23,11 +23,33 @@ const actions = {
 
     router.push("/");
   },
+
+  // delImage: function({ commit }, rootState, id) {
+  //   const { token } = rootState.auth;
+  //   api.delImage(id, token);
+  //   commit()
+  // },
+
+  likeImage({ commit }, id) {
+    commit("likeImage", id);
+  },
+
+  // favorite() {},
 };
 
 const mutations = {
   setImages: (state, images) => {
-    state.images = images;
+    state.images = images.map((image) => {
+      return { image, isLiked: false };
+    });
+  },
+  likeImage(state, id) {
+    state.images.forEach((image, index) => {
+      if (index === id) {
+        console.log(index);
+        image.isLiked = !image.isLiked;
+      }
+    });
   },
 };
 
